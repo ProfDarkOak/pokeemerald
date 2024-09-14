@@ -569,6 +569,8 @@ extern const u8 gText_Stats_EggCycles_Fast[];
 extern const u8 gText_Stats_EggCycles_Normal[];
 extern const u8 gText_Stats_EggCycles_Slow[];
 extern const u8 gText_Stats_Growthrate[];
+extern const u8 gText_Stats_Ability1[];
+extern const u8 gText_Stats_Ability2[];
 extern const u8 gText_Stats_Friendship[];
 extern const u8 gText_Stats_Friendship_BigAnger[];
 extern const u8 gText_Stats_Friendship_Neutral[];

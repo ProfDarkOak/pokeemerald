@@ -3318,6 +3318,7 @@ extern const u32 gPokedexPlusHGSS_Interface_DECA_Gfx[];
 extern const u32 gPokedexPlusHGSS_Menu_1_Gfx[];
 extern const u32 gPokedexPlusHGSS_Menu_2_Gfx[];
 extern const u32 gPokedexPlusHGSS_Menu_3_Gfx[];
+extern const u32 gPokedexPlusHGSS_Menu_4_Gfx[];
 extern const u32 gPokedexPlusHGSS_MenuSearch_Gfx[];
 extern const u32 gPokedexPlusHGSS_MenuSearch_DECA_Gfx[];
 extern const u32 gPokedexPlusHGSS_StartMenuMain_Tilemap[];

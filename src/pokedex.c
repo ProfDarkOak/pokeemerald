@@ -3397,7 +3397,7 @@ static void Task_HandleInfoScreenInput(u8 taskId)
             PlaySE(SE_PIN);
             break;
         case SIZE_SCREEN:
-            if (!sPokedexListItem->owned)
+            if (!sPokedexListItem->seen)
             {
                 PlaySE(SE_FAILURE);
             }
@@ -3677,7 +3677,7 @@ static void Task_HandleCryScreenInput(u8 taskId)
         if (JOY_NEW(DPAD_RIGHT)
          || (JOY_NEW(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR))
         {
-            if (!sPokedexListItem->owned)
+            if (!sPokedexListItem->seen)
             {
                 PlaySE(SE_FAILURE);
             }

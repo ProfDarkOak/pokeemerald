@@ -1264,6 +1264,7 @@ const u32 gPokedexPlusHGSS_Interface_DECA_Gfx[]  = INCBIN_U32("graphics/pokedex/
 const u32 gPokedexPlusHGSS_Menu_1_Gfx[]      = INCBIN_U32("graphics/pokedex/hgss/HGSS_tileset_menu1.4bpp.lz");
 const u32 gPokedexPlusHGSS_Menu_2_Gfx[]      = INCBIN_U32("graphics/pokedex/hgss/HGSS_tileset_menu2.4bpp.lz");
 const u32 gPokedexPlusHGSS_Menu_3_Gfx[]      = INCBIN_U32("graphics/pokedex/hgss/HGSS_tileset_menu3.4bpp.lz");
+const u32 gPokedexPlusHGSS_Menu_4_Gfx[]      = INCBIN_U32("graphics/pokedex/hgss/HGSS_tileset_menu4.4bpp.lz");
 const u32 gPokedexPlusHGSS_MenuSearch_Gfx[]          = INCBIN_U32("graphics/pokedex/hgss/HGSS_tileset_menu_search.4bpp.lz");
 const u32 gPokedexPlusHGSS_MenuSearch_DECA_Gfx[]     = INCBIN_U32("graphics/pokedex/hgss/HGSS_tileset_menu_search_DECA.4bpp.lz");
 const u32 gPokedexPlusHGSS_StartMenuMain_Tilemap[]           = INCBIN_U32("graphics/pokedex/hgss/HGSS_tilemap_start_menu.bin.lz");
