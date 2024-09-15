@@ -822,7 +822,7 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
         gTasks[taskId].func = Task_MenuEditingStat;
         if(sStatEditorDataPtr->editingStat == 0)
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);
-        if((sStatEditorDataPtr->editingStat == 255 || (sStatEditorDataPtr->evTotal == 510)) && (sStatEditorDataPtr->selector_x == 0))
+        if((sStatEditorDataPtr->editingStat == 252 || (sStatEditorDataPtr->evTotal == 510)) && (sStatEditorDataPtr->selector_x == 0))
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
         if((sStatEditorDataPtr->editingStat == 31) && (sStatEditorDataPtr->selector_x == 1))
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
@@ -856,13 +856,13 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_StatEditorTurnOff;
     }
-    if (JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_RIGHT))
-    {
-        if(sStatEditorDataPtr->selector_x == 0)
-            sStatEditorDataPtr->selector_x = 1;
-        else
-            sStatEditorDataPtr->selector_x = 0; 
-    }
+    //if (JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_RIGHT))
+    //{
+        //if(sStatEditorDataPtr->selector_x == 0)
+        //    sStatEditorDataPtr->selector_x = 1;
+        //else
+        //    sStatEditorDataPtr->selector_x = 0; 
+    //}
     if (JOY_NEW(DPAD_UP))
     {
         if (sStatEditorDataPtr->selector_y == 0)
@@ -918,7 +918,7 @@ static void ChangeAndUpdateStat()
 
 #define STAT_MINIMUM          0  
 #define IV_MAX_SINGLE_STAT    31   
-#define EV_MAX_SINGLE_STAT    255   
+#define EV_MAX_SINGLE_STAT    252   
 #define EV_MAX_TOTAL          510            
                 
 #define EDITING_EVS     0
@@ -942,7 +942,7 @@ static void HandleEditingStatInput(u32 input)
         return;
     }
 
-    #define INCREASE_DECREASE_AMOUNT 1
+    #define INCREASE_DECREASE_AMOUNT 4
 
     switch(input)
     {
@@ -950,10 +950,11 @@ static void HandleEditingStatInput(u32 input)
             for (iterator = 0; iterator < INCREASE_DECREASE_AMOUNT; iterator++)
             {
                 if(!(sStatEditorDataPtr->editingStat == STAT_MINIMUM))
-                    sStatEditorDataPtr->editingStat--;
+                    sStatEditorDataPtr->editingStat -= 1;
                 else
                     break;
             }
+			sStatEditorDataPtr->editingStat += (sStatEditorDataPtr->editingStat%4);
             break;
        case EDIT_INPUT_MAX_DECREASE_STATE:
             sStatEditorDataPtr->editingStat = STAT_MINIMUM;
@@ -962,10 +963,11 @@ static void HandleEditingStatInput(u32 input)
             for (iterator = 0; iterator < INCREASE_DECREASE_AMOUNT; iterator++)
             {
                 if(!CHECK_IF_STAT_CANT_INCREASE)
-                    sStatEditorDataPtr->editingStat++;
+                    sStatEditorDataPtr->editingStat += 1;
                 else
                     break;
             }
+			sStatEditorDataPtr->editingStat -= (sStatEditorDataPtr->editingStat%4);
             break;
         case EDIT_INPUT_MAX_INCREASE_STATE:
             if((sStatEditorDataPtr->selector_x == EDITING_EVS))
