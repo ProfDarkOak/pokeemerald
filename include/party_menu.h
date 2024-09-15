@@ -48,6 +48,7 @@ void CB2_ReturnToPartyMenuFromFlyMap(void);
 void LoadHeldItemIcons(void);
 void DrawHeldItemIconsForTrade(u8 *partyCounts, u8 *partySpriteIds, u8 whichParty);
 void CB2_ShowPartyMenuForItemUse(void);
+void CB2_ShowPartyMenuForItemUseTMCase(void);
 void ItemUseCB_Medicine(u8 taskId, TaskFunc task);
 void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task);
 void ItemUseCB_PPRecovery(u8 taskId, TaskFunc task);
@@ -89,5 +90,11 @@ void MoveDeleterForgetMove(void);
 void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
+
+#ifndef BATTLE_ENGINE
+bool8 CanLearnTutorMove(u16, u8);
+#else
+u16 GetTMHMMoves(u16 position);
+#endif
 
 #endif // GUARD_PARTY_MENU_H

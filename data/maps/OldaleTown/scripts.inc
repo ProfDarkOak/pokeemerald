@@ -75,7 +75,12 @@ OldaleTown_EventScript_GoToMartEast::
 
 OldaleTown_EventScript_ExplainPokemonMart::
 	msgbox OldaleTown_Text_ThisIsAPokemonMart, MSGBOX_DEFAULT
-	giveitem ITEM_POTION
+	giveitem ITEM_TM_FOCUS_PUNCH
+	giveitem ITEM_TM_PROTECT
+	givemon SPECIES_URSARING, 80
+	givemon SPECIES_GARDEVOIR, 80
+	givemon SPECIES_VILEPLUME, 80
+	givemon SPECIES_HITMONCHAN, 80
 	goto_if_eq VAR_RESULT, FALSE, OldaleTown_EventScript_BagIsFull
 	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_POTION_OLDALE
