@@ -154,3 +154,4 @@
 	.include "src/tm_case.o"
 	.include "src/ui_stat_editor.o"
 	.include "src/option_plus_menu.o"
+	.include "src/dexnav.o"
