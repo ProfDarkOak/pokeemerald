@@ -4118,7 +4118,7 @@ static void Task_DisplayCaughtMonDexPage(u8 taskId)
 {
     u8 spriteId;
     u16 species = gTasks[taskId].tSpecies;
-    u16 dexNum = SpeciesToNationalPokedexNum(species);
+    u16 dexNum = NationalPokedexNumToSpecies(species);
 
     switch (gTasks[taskId].tState)
     {

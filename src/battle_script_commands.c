@@ -10038,7 +10038,7 @@ static void Cmd_displaydexinfo(void)
         {
             FreeAllWindowBuffers();
             #ifndef BATTLE_ENGINE
-            gBattleCommunication[TASK_ID] = DisplayCaughtMonDexPage(species,
+            gBattleCommunication[TASK_ID] = DisplayCaughtMonDexPage(SpeciesToNationalPokedexNum(species),
                                                                         gBattleMons[gBattlerTarget].otId,
                                                                         gBattleMons[gBattlerTarget].personality);
             #else
