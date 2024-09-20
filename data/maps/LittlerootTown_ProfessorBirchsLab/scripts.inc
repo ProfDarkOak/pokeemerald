@@ -152,6 +152,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent::
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForPokedex
 	waitmovement 0
+	setflag FLAG_SYS_DEXNAV_GET
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex
 	end
 
